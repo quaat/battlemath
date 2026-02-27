@@ -31,39 +31,42 @@ interface AnimationDefinition {
   loop: boolean
 }
 
+const spriteAsset = (fileName: string) =>
+  `${import.meta.env.BASE_URL}animation-pack/${fileName}`
+
 const animationDefinitions: Record<SpriteAnimation, AnimationDefinition> = {
   idle: {
-    src: '/animation-pack/Defensive-move.png',
+    src: spriteAsset('Defensive-move.png'),
     fps: 18,
     loop: true,
   },
   attack: {
-    src: '/animation-pack/Attacking-move.png',
+    src: spriteAsset('Attacking-move.png'),
     fps: 24,
     loop: false,
   },
   magic: {
-    src: '/animation-pack/Attacking-move.png',
+    src: spriteAsset('Attacking-move.png'),
     fps: 28,
     loop: false,
   },
   hurt: {
-    src: '/animation-pack/Defensive-move.png',
+    src: spriteAsset('Defensive-move.png'),
     fps: 22,
     loop: false,
   },
   victory: {
-    src: '/animation-pack/Winning-battle-chee.png',
+    src: spriteAsset('Winning-battle-chee.png'),
     fps: 18,
     loop: true,
   },
   defeat: {
-    src: '/animation-pack/Loosing-battle-fall.png',
+    src: spriteAsset('Loosing-battle-fall.png'),
     fps: 20,
     loop: false,
   },
   death: {
-    src: '/animation-pack/Loosing-battle-fall.png',
+    src: spriteAsset('Loosing-battle-fall.png'),
     fps: 24,
     loop: false,
   },
@@ -83,13 +86,13 @@ const profileConfigs: Record<'default' | 'newton', SpriteProfileConfig> = {
     renderFrameWidth: 224,
     renderFrameHeight: 189,
     animationMap: {
-      idle: { src: '/animation-pack/newton_animation.png', fps: 18, loop: true },
-      attack: { src: '/animation-pack/newton_animation.png', fps: 24, loop: false },
-      magic: { src: '/animation-pack/newton_animation.png', fps: 24, loop: false },
-      hurt: { src: '/animation-pack/newton_animation.png', fps: 22, loop: false },
-      victory: { src: '/animation-pack/newton_animation.png', fps: 18, loop: true },
-      defeat: { src: '/animation-pack/newton_animation.png', fps: 22, loop: false },
-      death: { src: '/animation-pack/newton_animation.png', fps: 22, loop: false },
+      idle: { src: spriteAsset('newton_animation.png'), fps: 18, loop: true },
+      attack: { src: spriteAsset('newton_animation.png'), fps: 24, loop: false },
+      magic: { src: spriteAsset('newton_animation.png'), fps: 24, loop: false },
+      hurt: { src: spriteAsset('newton_animation.png'), fps: 22, loop: false },
+      victory: { src: spriteAsset('newton_animation.png'), fps: 18, loop: true },
+      defeat: { src: spriteAsset('newton_animation.png'), fps: 22, loop: false },
+      death: { src: spriteAsset('newton_animation.png'), fps: 22, loop: false },
     },
   },
 }
